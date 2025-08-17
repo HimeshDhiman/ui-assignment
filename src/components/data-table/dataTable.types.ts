@@ -1,19 +1,10 @@
-/**
- * A single column definition for DataTable.
- */
-export interface Column {
-  /** Column header label shown in table head */
+// src/components/data-table/dataTable.types.ts
+export interface Column<T> {
   header: string;
-  /** Key in row object used to read cell value */
-  accessor: string;
+  accessor: keyof T;
 }
 
-/**
- * Props for the DataTable component.
- */
-export interface DataTableProps {
-  /** Visible columns of the table */
-  columns: Column[];
-  /** Array of row objects (string/number values are recommended) */
-  data: Record<string, any>[];
+export interface DataTableProps<T> {
+  columns: Column<T>[];
+  data: T[];
 }

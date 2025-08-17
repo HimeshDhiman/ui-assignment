@@ -3,16 +3,21 @@ import { InputField } from "./components/input-field/InputField";
 import { DataTable } from "./components/data-table/DataTable";
 import { DataTableProps } from "./components/data-table/dataTable.types";
 
+interface RowData {
+  email: string;
+  password: string;
+}
+
 const App: React.FC = () => {
-  const columns: DataTableProps["columns"] = [
+  const columns: DataTableProps<RowData>["columns"] = [
     { header: "Email", accessor: "email" },
     { header: "Password", accessor: "password" },
   ];
 
-  const [data, setData] = useState<{ email: string; password: string }[]>([]);
+  const [data, setData] = useState<RowData[]>([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [searchTerm, setSearchTerm] = useState(""); // ✅ NEW state
+  const [searchTerm, setSearchTerm] = useState(""); 
   const [darkMode, setDarkMode] = useState(false);
 
   const toggleTheme = () => {
@@ -35,7 +40,6 @@ const App: React.FC = () => {
     setPassword("");
   };
 
-  // ✅ Filtered data based on search
   const filteredData = data.filter(
     (row) =>
       row.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -90,7 +94,6 @@ const App: React.FC = () => {
         </button>
       </form>
 
-      {/* ✅ Search Bar */}
       <div className="mt-6 w-full max-w-md">
         <input
           type="text"
@@ -102,7 +105,7 @@ const App: React.FC = () => {
       </div>
 
       <div className="mt-8 w-full max-w-2xl">
-        <DataTable columns={columns} data={filteredData} />
+        <DataTable<RowData> columns={columns} data={filteredData} />
       </div>
     </div>
   );

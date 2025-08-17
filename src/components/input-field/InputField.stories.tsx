@@ -4,7 +4,7 @@ import { InputField } from "./InputField";
 const meta: Meta<typeof InputField> = {
   title: "Components/InputField",
   component: InputField,
-  tags: ["autodocs"], // Docs tab me auto generate hoga
+  tags: ["autodocs"], 
   args: {
     label: "Example",
     placeholder: "Enter value",
@@ -14,7 +14,6 @@ const meta: Meta<typeof InputField> = {
 export default meta;
 type Story = StoryObj<typeof InputField>;
 
-// 👇 Default example
 export const Default: Story = {
   args: {
     label: "Email",
@@ -22,7 +21,7 @@ export const Default: Story = {
   },
 };
 
-// 👇 Variants
+//Variants
 export const Outlined: Story = {
   args: {
     label: "Outlined",
@@ -44,7 +43,7 @@ export const Ghost: Story = {
   },
 };
 
-// 👇 Sizes
+// Sizes
 export const Small: Story = {
   args: {
     label: "Small",
@@ -66,7 +65,7 @@ export const Large: Story = {
   },
 };
 
-// 👇 States
+//States
 export const Disabled: Story = {
   args: {
     label: "Disabled",
@@ -91,7 +90,7 @@ export const Loading: Story = {
   },
 };
 
-// 👇 Password toggle
+// Password toggle
 export const Password: Story = {
   args: {
     label: "Password",
@@ -101,7 +100,7 @@ export const Password: Story = {
   },
 };
 
-// 👇 Clearable
+// Clearable
 export const Clearable: Story = {
   args: {
     label: "Search",
@@ -110,7 +109,7 @@ export const Clearable: Story = {
   },
 };
 
-// 👇 Helper Text
+// Helper Text
 export const HelperText: Story = {
   args: {
     label: "Username",
