@@ -1,0 +1,23 @@
+import { Meta, Title, Subtitle, Description, ArgsTable, Canvas, Story, Primary, Controls, Source } from '@storybook/blocks';
+import React from 'react';
+import { InputField } from './InputField';
+
+<Meta title="Docs/InputField" of={InputField} />
+
+<Title>InputField</Title>
+<Subtitle>Accessible, theme-aware text input with variants, sizes & states</Subtitle>
+
+<Description>
+`InputField` ek reusable input component hai jisme **variants** (`outlined`, `filled`, `ghost`), **sizes** (`sm`, `md`, `lg`) aur **states** (disabled, invalid, loading) included hain. Extra features: **password toggle** aur **clearable**.
+</Description>
+
+## Anatomy
+```tsx
+<div>
+  <label />       // optional
+  <div className="relative">
+    <input />     // core control
+    {/* spinner / clear button / show-hide toggle */}
+  </div>
+  <p />           // helper or error text
+</div>
